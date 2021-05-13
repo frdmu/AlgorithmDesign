@@ -9,7 +9,8 @@ class point:
 def pointSet(N):
     Q = set()
     while len(Q) < N:
-        a = point(random.randint(0, 100), random.randint(0, 100), 0)
+        #a = point(random.randint(0, 100), random.randint(0, 100), 0)
+        a = point(random.uniform(0, 100), random.uniform(0, 100), 0)
         Q.add(a)
     return Q
 
@@ -80,25 +81,17 @@ def drawPoint(Q, P, flag):
     plt.show()
 
 def drawPerformancePicture(X, Y1, Y2, Y3):
-    plt.subplot(121)
-    plt.title("enumeration")
+    plt.subplot()
+    plt.title("performance")
     plt.xlim(xmax=max(X)*1.1, xmin=0)
     plt.ylim(ymax=max(Y1)*1.1, ymin=0)
     plt.xlabel("number")
     plt.ylabel("time")
     plt.plot(X, Y1, label="Enumeration", color="red", marker=".")
-    for i in range(len(X)):
-        plt.text(X[i], Y1[i], '%.4f' % Y1[i], ha='center', va= 'bottom')
-    
-    plt.subplot(122)
-    plt.title("Graham-Scan&DivideConquer")
-    plt.xlim(xmax=max(X)*1.1, xmin=0)
-    plt.ylim(ymax=max(max(Y2),max(Y3))*1.1, ymin=0)
-    plt.xlabel("number")
-    plt.ylabel("time")
     plt.plot(X, Y2, label="Graham-Scan", color="blue", marker="o")
     plt.plot(X, Y3, label="DivideConquer", color="black", marker="<")
     for i in range(len(X)):
+        plt.text(X[i], Y1[i], '%.4f' % Y1[i], ha='center', va= 'bottom')
         plt.text(X[i], Y2[i], '%.4f' % Y2[i],ha='center', va= 'bottom')
         plt.text(X[i], Y3[i], '%.4f' % Y3[i],ha='center', va= 'bottom') 
     plt.legend()

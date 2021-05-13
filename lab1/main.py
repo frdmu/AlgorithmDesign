@@ -14,19 +14,19 @@ if __name__ == '__main__':
         # enumeration 
         boundaryPointSet1 = enumeration(Q);
         endTime1 = time.time() 
-        drawPoint(Q, boundaryPointSet1, 1)
-        print(endTime1 - startTime)    
+        # drawPoint(Q, boundaryPointSet1, 1)
+        # print(endTime1 - startTime)    
         # grahamScan 
         boundaryPointSet2 = grahamScan(Q);
         endTime2 = time.time()
-        print(endTime2 - endTime1)
-        drawPoint(Q, boundaryPointSet2, 2)
+        # print(endTime2 - endTime1)
+        # drawPoint(Q, boundaryPointSet2, 2)
         
         # divideConquer
         boundaryPointSet3 = divideConquer(Q)
         endTime3 = time.time()
-        print(endTime3 - endTime2)
-        drawPoint(Q, boundaryPointSet3, 3)
+        # print(endTime3 - endTime2)
+        # drawPoint(Q, boundaryPointSet3, 3)
         
         Y1.append(endTime1 - startTime) 
         Y2.append(endTime2 - endTime1)
