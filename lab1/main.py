@@ -16,6 +16,7 @@ if __name__ == '__main__':
         endTime1 = time.time() 
         # drawPoint(Q, boundaryPointSet1, 1)
         # print(endTime1 - startTime)    
+        
         # grahamScan 
         boundaryPointSet2 = grahamScan(Q);
         endTime2 = time.time()
